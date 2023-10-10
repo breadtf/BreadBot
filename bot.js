@@ -55,7 +55,7 @@ client.on("messageCreate", function(message) {
         if (random == 4){
             message.reply("*BANG*");
             try {
-                let testRole = message.guild.roles.cache.find(role => role.id == "1157061438821646356")
+                let testRole = message.guild.roles.cache.find(role => role.id == config.RR_LOSSROLE)
                 message.member.roles.add(testRole)
             } catch (e){
                 console.log(e);
@@ -80,7 +80,7 @@ client.on("messageCreate", function(message) {
         message.reply(`\`\`\`${hex}\`\`\``);
     }
     else if (command == "eval"){
-        if (!message.member.roles.cache.has("1159151391588241479")){
+        if (!message.member.roles.cache.has(config.EVALPERMROLE)){
             message.reply("you dont have perms.")
         } else{
             try{
@@ -127,7 +127,7 @@ client.on("messageCreate", function(message) {
 
     }
     else if (command == "run"){
-        if (message.author.tag.toString() == "breadtf"){
+        if (message.author.tag.toString() == config.OWNER_TAG){
             var spawn = require('child_process').spawn;
             var ls  = spawn(args.toString().split(" ")[0], args.toString().split(" ", 1)[1]);
             ls.stdout.on('data', function (data) {
