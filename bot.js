@@ -149,53 +149,19 @@ client.on("ready", () => {
 process.on("unhandledException", err => {
 	console.error(err);
 
-	client.channels.cache.get('1159156976727638086').send("```xl\n" + err + "\n```");
+	client.channels.cache.get(config.LOGS_CHNNL).send("```xl\n" + err + "\n```");
 
 });
 process.on("uncaughtException", err => {
 	console.error(err);
 
-	client.channels.cache.get('1159156976727638086').send("```xl\n" + `${err.message}\n\n${err.stack}` + "\n```");
+	client.channels.cache.get(config.LOGS_CHNNL).send("```xl\n" + `${err.message}\n\n${err.stack}` + "\n```");
 
 });
 
 function logToLogs(message){
     var stripped = message.toString().replace("`", "'")
-    client.channels.cache.get('1159156976727638086').send("```\n" + `${stripped}` + "\n```");
+    client.channels.cache.get(config.LOGS_CHNNL).send("```\n" + `${stripped}` + "\n```");
 }
 
 client.login(config.BOT_TOKEN);
-
-const port = 8888
-const app = express();
-
-
-// Handle POST requests
-app.use(express.json());
-
-app.post('/send-message', (req, res) => {
-  const { message } = req.body;
-
-  if (!message) {
-    return res.status(400).json({ error: 'Message content is missing' });
-  }
-
-  // Replace 'YOUR_CHANNEL_ID' with your Discord channel's ID
-  const channelId = '1159156976727638086';
-
-  const channel = client.channels.cache.get(channelId);
-
-  if (channel) {
-    channel.send(message);
-    res.status(200).json({ success: true });
-  } else {
-    res.status(404).json({ error: 'Channel not found' });
-  }
-});
-app.get("/messages", (req, res) => {
-    res.status(200).json({message: latestMessage, author: latestMessageAuthor})
-});
-// Start the HTTP server
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
