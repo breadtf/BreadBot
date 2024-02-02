@@ -2,6 +2,5 @@
     "BOT_TOKEN": "TOKEN",
     "LOGS_CHNNL": "ID",
     "RR_LOSSROLE": "ID",
-    "EVAL_PERMROLE": "ID",
-    "OWNER_TAG": "TAG"
+    "OWNER_ID": "ID"
 }

@@ -59,7 +59,7 @@ async def hex(ctx: discord.Interaction, text: str):
 async def run(ctx: discord.Interaction, text: str):
     await ctx.response.defer()
     
-    if ctx.user.id != config['OWNER_TAG']:
+    if ctx.user.id != config['OWNER_ID']:
         await ctx.response.send_message('You are not allowed to use this command')
         return
 
