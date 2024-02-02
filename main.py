@@ -1,5 +1,5 @@
 """Original JavaScript (ew) version written by @BreadTeleporter on 10th October 2023
-Rewritten in Python by @mldkyt on 29th January 2024
+Rewritten in Python (better language) by @mldkyt on 29th January 2024
 """
 
 import json
