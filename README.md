@@ -1,9 +1,5 @@
 # BreadBot
-discord bot ~~in node~~ that will be in python3 i guess
-
-~~some code stolen from notsokodya's [netcat](https://github.com/notsokodya/netcat)~~
-
-no code will be stolen shush
+discord bot in python3 now (javascript is bad)
 
 will be written on debian unstable btw
 
