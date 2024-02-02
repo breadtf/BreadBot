@@ -1,6 +1,5 @@
 # BreadBot
-discord bot in node i guess
 
-some code stolen from notsokodya's [netcat](https://github.com/notsokodya/netcat)
+discord bot in python3 now (javascript is bad)
 
 make sure to set your token and your log channel in config.json before starting :3
