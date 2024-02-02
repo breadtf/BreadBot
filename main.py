@@ -5,7 +5,6 @@ Rewritten in Python (better language) by @mldkyt on 29th January 2024
 import json
 import random
 import subprocess
-import codecs
 import discord
 from discord.ext import commands as discord_commands
 
@@ -49,11 +48,6 @@ async def avatar(ctx: discord.Interaction, user: discord.User):
         return
 
     await ctx.response.send_message(user.avatar.url)
-
-@client.slash_command(name="hex", description="Convert text to hex")
-async def hex(ctx: discord.Interaction, text: str):
-    converted = text.encode(encoding='hex')
-    await ctx.response.send_message(converted)
 
 @client.slash_command(name="run", description="OWNER ONLY: Run a command on the host machine (is very safe)")
 async def run(ctx: discord.Interaction, text: str):
